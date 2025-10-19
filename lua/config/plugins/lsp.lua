@@ -2,9 +2,8 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require "lspconfig"
-      lspconfig.lua_ls.setup({})
-      lspconfig.rust_analyzer.setup({
+      vim.lsp.config.lua_ls = {}
+      vim.lsp.config.rust_analyzer = {
         settings = {
           ['rust-analyzer'] = {
             diagnostics = {
@@ -12,7 +11,7 @@ return {
             }
           }
         }
-      })
+      }
     end
   },
 }
