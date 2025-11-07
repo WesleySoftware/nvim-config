@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -15,7 +15,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 
 -- add lazy to the path
--- check with `:echo nvim_list_runtime_paths()` on the command line 
+-- check with `:echo nvim_list_runtime_paths()` on the command line
 vim.opt.runtimepath:prepend(lazypath)
 
 -- Setup lazy.nvim
